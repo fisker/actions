@@ -21,7 +21,7 @@ jobs:
         run: yarn
 
       - name: Run fix script
-        run: yarn fix || exit 0
+        run: yarn fix || true
 
       - name: Apply automated fix
         uses: autofix-ci/action@v1
