@@ -7,9 +7,6 @@ jobs:
   scheduled:
     name: Run scheduled task
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      contents: write
     env:
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
       #  RUNNER_DEBUG: "1"
