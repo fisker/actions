@@ -1,11 +1,11 @@
-name: Run code fix script
+name: Run automated fix
 
 on:
   workflow_call:
 
 jobs:
   fix:
-    name: Run autofix
+    name: Run automated fix
     runs-on: ubuntu-latest
     env:
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
@@ -23,7 +23,8 @@ jobs:
       - name: Run fix script
         run: yarn fix || exit 0
 
-      - uses: autofix-ci/action@v1
+      - name: Apply automated fix
+        uses: autofix-ci/action@v1
         with:
           commit-message: "Apply automated changes"
           fail-fast: false

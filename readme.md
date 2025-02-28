@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   fix:
-    if: github.repository == 'fisker/update'
+    if: github.repository == 'fisker/playground'
     name: Run automated fix
     uses: fisker/shared-workflows/.github/workflows/autofix.yml@main
 ```
@@ -38,7 +38,7 @@ concurrency:
 
 jobs:
   update:
-    if: github.event_name != 'schedule' || github.repository == 'fisker/update'
+    if: github.event_name != 'schedule' || github.repository == 'fisker/playground'
     permissions:
       contents: write
       pull-requests: write
