@@ -23,6 +23,8 @@ jobs:
         run: yarn fix
 
       - uses: autofix-ci/action@v1
+        env:
+          RUNNER_DEBUG: "1"
         with:
           commit-message: "Apply automated changes"
           fail-fast: false
