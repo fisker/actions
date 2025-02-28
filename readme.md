@@ -2,7 +2,7 @@
 
 About [reuseable workflows](https://docs.github.com/en/actions/sharing-automations/reusing-workflows).
 
-## autofix.yml
+## automated-fix.yml
 
 ```yml
 name: autofix.ci # needed to securely identify the workflow
@@ -18,7 +18,7 @@ jobs:
   fix:
     if: github.repository == 'fisker/playground'
     name: Run automated fix
-    uses: fisker/shared-workflows/.github/workflows/autofix.yml@main
+    uses: fisker/shared-workflows/.github/workflows/automated-fix.yml@main
 ```
 
 ## scheduled-task.yml
