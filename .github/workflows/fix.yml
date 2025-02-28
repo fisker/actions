@@ -1,4 +1,4 @@
-name: autofix.ci
+name: Run code fix script
 
 on:
   workflow_call:
