@@ -10,6 +10,10 @@ name: autofix.ci # needed to securely identify the workflow
 on:
   pull_request:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   fix:
     if: github.repository == 'fisker/update'
@@ -27,6 +31,10 @@ on:
   schedule:
     # “At 00:00 on day-of-month 1 and on Sunday in January.” https://crontab.guru/#0_0_1_1_0
     - cron: "0 0 1 1 0"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   update:
