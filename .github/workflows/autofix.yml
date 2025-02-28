@@ -20,7 +20,7 @@ jobs:
         run: yarn
 
       - name: Run fix script
-        run: yarn fix
+        run: yarn fix || exit 0
 
       - uses: autofix-ci/action@v1
         env:
